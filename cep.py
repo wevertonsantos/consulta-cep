@@ -11,6 +11,8 @@ def main():
             bairro = response_json['bairro']
             localidade = response_json['localidade']
             estado = response_json['uf']
+            print(f"Nome da rua: {logradouro} - Complemento: {complemento} - Bairro: {bairro}")
+            print(f"Localidade: {localidade} - Estado: {estado}")
             break
         else:
             print("O CEP deve conter 8 dígitos")
