@@ -5,8 +5,8 @@ def main():
         cep = input("Digite o CEP que deseja consultar: ")
         if len(cep) == 8:
             url = f"https://viacep.com.br/ws/{cep}/json"
-            response = json.loads(requests.get(url).text)
-            print(response)
+            response_json = json.loads(requests.get(url).text)
+            print(response_json)
             break
         else:
             print("O CEP deve conter 8 dígitos")
