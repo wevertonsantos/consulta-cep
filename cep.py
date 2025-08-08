@@ -6,7 +6,11 @@ def main():
         if len(cep) == 8:
             url = f"https://viacep.com.br/ws/{cep}/json"
             response_json = json.loads(requests.get(url).text)
-            print(response_json)
+            logradouro = response_json['logradouro']
+            complemento = response_json['complemento']
+            bairro = response_json['bairro']
+            localidade = response_json['localidade']
+            estado = response_json['uf']
             break
         else:
             print("O CEP deve conter 8 dígitos")
