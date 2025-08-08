@@ -7,7 +7,7 @@ def main():
             try:
                 url = f"https://viacep.com.br/ws/{cep}/json"
                 response_json = json.loads(requests.get(url).text)
-                if len(response_json) == 1:
+                if "erro" in response_json:
                     print(f"CEP: {cep} não existe, informe outro.")
                     continue
                 else:
