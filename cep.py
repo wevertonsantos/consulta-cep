@@ -1,3 +1,5 @@
+import requests
+
 def main():
     while True:
         escolha_usuario = input("Digite o CEP que deseja consultar: ")
