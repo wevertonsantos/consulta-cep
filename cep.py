@@ -4,7 +4,8 @@ def main():
     while True:
         escolha_usuario = input("Digite o CEP que deseja consultar: ")
         if len(escolha_usuario) == 8:
-            response = json.loads(requests.get(f"https://viacep.com.br/ws/{escolha_usuario}/json").text)
+            url = f"https://viacep.com.br/ws/{escolha_usuario}/json"
+            response = json.loads(requests.get(url).text)
             print(response)
             break
         else:
