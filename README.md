@@ -45,7 +45,7 @@ python cep.py
 ## 💻 Exemplo de Uso
 
 ```
-Digite o CEP (apenas números) ou 'sair' para encerrar: 01001000
+Digite o CEP (apenas números) : 01001000
 
 📍 Resultado da consulta:
 Rua: Praça da Sé
