@@ -30,7 +30,7 @@ def resultado_api(dados_cep):
     bairro = dados_cep['bairro']
     localidade = dados_cep['localidade']
     estado = dados_cep['uf']
-    print(f"Nome da rua: {logradouro} - Complemen{complemento} - Bairro: {bairro}")
+    print(f"Nome da rua: {logradouro} - Complemento{complemento} - Bairro: {bairro}")
     print(f"Localidade: {localidade} - Estado: {estado}")
 
 main()
