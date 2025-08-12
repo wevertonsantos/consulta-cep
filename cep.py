@@ -18,8 +18,7 @@ def main():
             print("O CEP deve conter apenas 8 dígitos sem traço. Ex: 01001000")
 
 def valida_cep(cep):
-    if len(cep) == 8 and cep.isdigit():
-        return True
+    return len(cep) == 8 and cep.isdigit()
 
 def consulta_api(cep):
     url = f"https://viacep.com.br/ws/{cep}/json"
