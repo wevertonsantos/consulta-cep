@@ -5,7 +5,7 @@ def main():
         cep = input("Digite o CEP que deseja consultar: ").strip()
         if valida_cep(cep):
             try:
-                response_json = consulta_api(cep)
+                dados_cep = consulta_api(cep)
                 if "erro" in response_json:
                     print(f"CEP: {cep} não existe, informe outro.")
                     continue
