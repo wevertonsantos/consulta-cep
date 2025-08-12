@@ -6,11 +6,11 @@ def main():
         if valida_cep(cep):
             try:
                 dados_cep = consulta_api(cep)
-                if "erro" in response_json:
+                if "erro" in dados_cep:
                     print(f"CEP: {cep} não existe, informe outro.")
                     continue
                 else:
-                    resultado_api(response_json)
+                    resultado_api(dados_cep)
                 break
             except requests.exceptions.RequestException as e:
                 print(f"Erro ao consultar o CEP: {e}")
@@ -23,14 +23,14 @@ def valida_cep(cep):
 
 def consulta_api(cep):
     url = f"https://viacep.com.br/ws/{cep}/json"
-    return json.loads(requests.get(url).text)
+    return requests.get(url).json()
 
-def resultado_api(response_json):
-    logradouro = response_json['logradouro']
-    complemento = response_json['complemento']
-    bairro = response_json['bairro']
-    localidade = response_json['localidade']
-    estado = response_json['uf']
+def resultado_api(dados_cep):
+    logradouro = dados_cep['logradouro']
+    complemento = dados_cep['complemento']
+    bairro = dados_cep['bairro']
+    localidade = dados_cep['localidade']
+    estado = dados_cep['uf']
     print(f"Nome da rua: {logradouro} - Complemen{complemento} - Bairro: {bairro}")
     print(f"Localidade: {localidade} - Estado: {estado}")
 
