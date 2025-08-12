@@ -3,7 +3,7 @@ import requests,json
 def main():
     while True:
         cep = input("Digite o CEP que deseja consultar: ")
-        if len(cep) == 8 and cep.isdigit():
+        if valida_cep(cep):
             try:
                 url = f"https://viacep.com.br/ws/{cep}/json"
                 response_json = json.loads(requests.get(url).text)
@@ -24,4 +24,8 @@ def main():
         else:
             print("O CEP deve conter 8 dígitos")
 
+def valida_cep(cep):
+    if len(cep) == 8 and cep.isdigit():
+        return True
+    
 main()
