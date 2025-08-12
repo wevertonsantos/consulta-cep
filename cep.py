@@ -5,8 +5,7 @@ def main():
         cep = input("Digite o CEP que deseja consultar: ")
         if valida_cep(cep):
             try:
-                url = f"https://viacep.com.br/ws/{cep}/json"
-                response_json = json.loads(requests.get(url).text)
+                response_json = consulta_api(cep)
                 if "erro" in response_json:
                     print(f"CEP: {cep} não existe, informe outro.")
                     continue
@@ -27,5 +26,9 @@ def main():
 def valida_cep(cep):
     if len(cep) == 8 and cep.isdigit():
         return True
-    
+
+def consulta_api(cep):
+    url = f"https://viacep.com.br/ws/{cep}/json"
+    return json.loads(requests.get(url).text)
+
 main()
