@@ -15,7 +15,7 @@ def main():
             except requests.exceptions.RequestException as e:
                 print(f"Erro ao consultar o CEP: {e}")
         else:
-            print("O CEP deve conter 8 dígitos")
+            print("O CEP deve conter apenas 8 dígitos sem traço. Ex: 01001000")
 
 def valida_cep(cep):
     if len(cep) == 8 and cep.isdigit():
